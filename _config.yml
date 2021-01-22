@@ -1,24 +1,48 @@
+# Welcome to Jekyll!
 #
-###################################
-# Site wide configuration
-####################################
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
 #
-title: Leonids
-email:
-description: A simple and awesome blog theme powered by jekyll.
-url: # the base hostname & protocol for your site
-keywords: ["blog", "jekyll"]
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-#
-###################################
-# Jekyll configuration
-####################################
-#
+
+
+###########################
+# Site wide configuration #
+###########################
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: 人性空間
+email: soyccan@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://blog.soyccan.tw" # the base hostname & protocol for your site, e.g. http://example.com
+keywords: ["blog", "soyccan"]
+twitter_username: soyccan
+github_username:  soyccan
+
+
+
+########################
+# Jekyll configuration #
+########################
+
 timezone:          Europe/Paris
 markdown:          kramdown
 highlighter:       rouge
 excerpt_separator: <!--more-->
 permalink:         /articles/:year-:month/:title
+# theme: minima
+# remote_theme: github_user/repo@branch
 
 kramdown:
   auto_ids: true
@@ -27,13 +51,30 @@ kramdown:
   toc_levels: 1..6
   enable_coderay: false
 
-#
-###################################
-# Site Owner configuration
-####################################
-#
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+
+
+############################
+# Site Owner configuration #
+############################
+
 owner:
-  name: Leonids
+  name: soyccan
   avatar: leonids-logo.png
   job: "A jekyll theme"
   bio: "A simple and awesome blog theme powered by jekyll."
